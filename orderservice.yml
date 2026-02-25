@@ -1,6 +1,6 @@
 spring:
   application:
-    name: order-service
+    name: orderservice
   datasource:
     url: jdbc:postgresql://localhost:5432/orderdb
     username: ecommerce
