@@ -1,8 +1,8 @@
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/productdb
-    username: ecommerce
-    password: ecommerce
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
   jpa:
     database: PostgreSQL
     show-sql: true
