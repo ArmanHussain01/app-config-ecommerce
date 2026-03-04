@@ -17,4 +17,9 @@ management:
 server:
   port: 8082
 
-
+eureka:
+  client:
+    server-url:
+      defaultZone: http://localhost:8761/eureka
+    fetch-registry: true
+    register-with-eureka: true
