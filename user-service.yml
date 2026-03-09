@@ -27,8 +27,6 @@ server:
 eureka:
   instance:
     prefer-ip-address: true
-    ip-address: 127.0.0.2
-    hostname: localhost
   client:
     server-url:
       defaultZone: http://localhost:8761/eureka
