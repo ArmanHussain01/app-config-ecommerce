@@ -32,6 +32,8 @@ server:
   port: 8083
 
 eureka:
+  instance:
+    prefer-ip-address: true
   client:
     server-url:
       defaultZone: http://localhost:8761/eureka
