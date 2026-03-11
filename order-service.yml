@@ -26,6 +26,13 @@ management:
   zipkin:
     tracing:
       endpoint: http://localhost:9411/api/v2/spans
+  endpoint:
+    health:
+      show-details: always
+  health:
+    circuitbreakers:
+      enabled: true
+  
     
 
 server:
@@ -39,6 +46,22 @@ eureka:
       defaultZone: http://localhost:8761/eureka
     fetch-registry: true
     register-with-eureka: true
+
+
+#Circut Breaker
+resilience4j:
+  circuitbreaker:
+    instances:
+      productService:
+        register-health-indicator: true
+        sliding-window-size: 10
+        minimum-number-of-calls: 5
+        permitted-number-of-calls-in-half-open-state: 3
+        wait-duration-in-open-state: 10s
+        failure-rate-threshold: 50
+        automatic-transition-from-open-to-half-open-enabled: true
+        sliding-window-type: count_based
+
 
 logging:
   file:
